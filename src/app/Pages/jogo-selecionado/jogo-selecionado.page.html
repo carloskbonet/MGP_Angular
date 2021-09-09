@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>jogo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background_container">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="backToStore()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  <ion-list>
+    <ion-item-group >
+      <ion-item lines="inset">
+        <ion-label position="fixed">Nome</ion-label>
+        {{jogo_selecionado.getNome()}}
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="fixed">Descrição</ion-label>
+        {{jogo_selecionado.getDescricao()}}
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label position="fixed">Preço</ion-label>
+        <b>R$ : </b>{{jogo_selecionado.getPreco()}}
+      </ion-item>
+    </ion-item-group>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="comprar()">Comprar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-list>
+</ion-content>

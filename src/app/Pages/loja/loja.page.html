@@ -6,4 +6,15 @@
     <ion-title>Loja</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-content class="background_container">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="goToRegister()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item-group *ngFor = "let jogos of lista_jogos">
+      <ion-item (click)="expandir(jogos)" lines="inset">{{jogos.getNome()}}</ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

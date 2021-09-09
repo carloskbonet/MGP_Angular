@@ -7,3 +7,10 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content class="background_container">
+  <ion-list>
+    <ion-item-group *ngFor = "let jogos of lista_jogos">
+      <ion-item lines="inset">{{jogos.getNome()}}</ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

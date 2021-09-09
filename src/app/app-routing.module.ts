@@ -22,6 +22,14 @@ const routes: Routes = [
   {
     path: 'Cadastro',
     loadChildren: () => import('./Pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'Editar',
+    loadChildren: () => import('./Pages/editar/editar.module').then( m => m.EditarPageModule)
+  },
+  {
+    path: 'Jogo-Selecionado',
+    loadChildren: () => import('./Pages/jogo-selecionado/jogo-selecionado.module').then( m => m.JogoSelecionadoPageModule)
   }
 ];
 

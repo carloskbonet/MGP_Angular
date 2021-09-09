@@ -3,6 +3,7 @@ export class conta{
     private _apelido:string
     private _idade:number
     private _biografia:string
+    
     constructor(nome:string , apelido:string , idade:number , biografia:string){
         this._nome = nome
         this._apelido = apelido
