@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'Pages/Biblioteca',
+    redirectTo: 'Cadastro',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'Pages/Biblioteca',
     loadChildren: () => import('./Pages/biblioteca/biblioteca.module').then( m => m.BibliotecaPageModule)
+  },
+  {
+    path: 'Cadastro',
+    loadChildren: () => import('./Pages/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   }
 ];
 
