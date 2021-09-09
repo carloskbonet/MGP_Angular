@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="backToProfile()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-item lines="none">
+    <ion-label>Habilitar Edição</ion-label>
+    <ion-toggle (ionChange)="alterarEdicao()" color ="success"></ion-toggle>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label position="floating">Nome</ion-label>
+    <ion-input [disabled] = "_editar" type="text" [(ngModel)]="nome"></ion-input>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label position="floating">Apelido</ion-label>
+    <ion-input [disabled] = "_editar" type="text" [(ngModel)]="apelido"></ion-input>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label position="floating">Idade</ion-label>
+    <ion-input [disabled] = "_editar" type="number" [(ngModel)]="idade"></ion-input>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label position="floating">Biografia</ion-label>
+    <ion-input [disabled] = "_editar" type="text" [(ngModel)]="biografia"></ion-input>
+  </ion-item>
+  <br>
+  <ion-row>
+    <ion-col>
+      <ion-button [disabled] = "_editar" type="submit" color="danger" expand="block" (click)="editar()">Cadastrar</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

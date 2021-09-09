@@ -8,16 +8,29 @@
 </ion-header>
 <ion-content class="background_container">
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="primary">
-      <ion-icon name="add"></ion-icon>
+    <ion-fab-button color="primary" (click)="editar()">
+      <ion-icon name="pencil"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  
   <ion-list>
-    <ion-item-group *ngFor = "let contatos of lista_contatos">
-      <ion-item lines="none">{{contatos.getNome()}}</ion-item>
-      <ion-item lines="none">{{contatos.getFone()}}</ion-item>
-      <ion-item lines="none">{{contatos.getSexo()}}</ion-item>
-      <ion-item>{{contatos.getDataNascimento()}}</ion-item>
+    <ion-item-group >
+      <ion-item lines="inset">
+        <ion-label position="fixed">Nome</ion-label>
+        {{conta_user.getNome()}}
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="fixed">Apelido</ion-label>
+        {{conta_user.getApelido()}}
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="fixed">Idade</ion-label>
+        {{conta_user.getIdade()}}
+      </ion-item>
+      <ion-item lines="inset">
+        <ion-label position="fixed">Biografia</ion-label>
+        {{conta_user.getBiografia()}}
+      </ion-item>
     </ion-item-group>
   </ion-list>
 </ion-content>
