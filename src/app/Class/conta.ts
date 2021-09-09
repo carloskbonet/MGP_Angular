@@ -23,6 +23,10 @@ export class conta{
         return this._idade
     }
 
+    public getBiografia():string{
+        return this._biografia
+    }
+
     public setNome(__nome:string){
         this._nome = __nome
     }
@@ -33,5 +37,9 @@ export class conta{
 
     public setIdade(__idade:number){
         this._idade = __idade
+    }
+
+    public setBiografia(__biografia:string){
+        this._biografia = __biografia
     }
 }
