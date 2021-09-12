@@ -3,31 +3,32 @@
     <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <h1>Bem-vindo ao Sistema de Gerenciamento de Jogos Mobile (Nome Temporário). Para continuar, por favor conclua o cadastro.</h1>
+
   <ion-item lines="full">
     <ion-label position="floating">Nome</ion-label>
-    <ion-input type="text" [(ngModel)]="nome"></ion-input>
+    <ion-input type="text" [(ngModel)]="nome"  placeholder="Digite aqui o seu nome"></ion-input>
   </ion-item>
 
   <ion-item lines="full">
     <ion-label position="floating">Apelido</ion-label>
-    <ion-input type="text" [(ngModel)]="apelido"></ion-input>
+    <ion-input type="text" [(ngModel)]="apelido"  placeholder="Digite aqui o seu apelido"></ion-input>
   </ion-item>
 
   <ion-item lines="full">
     <ion-label position="floating">Idade</ion-label>
-    <ion-input type="number" [(ngModel)]="idade"></ion-input>
+    <ion-input type="number" [(ngModel)]="idade" placeholder="Digite aqui a sua idade"></ion-input>
   </ion-item>
 
   <ion-item lines="full">
     <ion-label position="floating">Biografia</ion-label>
-    <ion-input type="text" [(ngModel)]="biografia"></ion-input>
+    <ion-input id="biog" type="text" [(ngModel)]="biografia" placeholder="Digite aqui a sua biografia" style="height:200px"></ion-input>
   </ion-item>
 
   <ion-row>
     <ion-col>
-      <ion-button type="submit" color="danger" expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+      <ion-button type="submit" color="medium" expand="block" (click)="cadastrar()">Cadastrar</ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

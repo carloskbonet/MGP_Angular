@@ -18,4 +18,5 @@ export class PerfilPage {
   private editar():void{
     this.router.navigateByUrl("/Editar")
   }
+  
 }
