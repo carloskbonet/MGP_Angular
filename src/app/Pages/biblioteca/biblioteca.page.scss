@@ -38,3 +38,10 @@ ion-button{
 span{
     color: red;
 }
+
+.background_container ion-button{
+    height: 50%;
+    position: relative;
+    align-items: flex-end;
+    top: -16px;
+}

@@ -31,4 +31,12 @@ export class JogoService {
   public insertJogosComprados(jogo_inserir:jogosComprados):void{
     this._jogosComprados.push(jogo_inserir)
   }
+
+  public reembolsarJogo(nome_jogo:string , nome_usuario:string) : void{
+    for(let i=0; i<this._jogosComprados.length; i++){
+      if(this._jogosComprados[i].getNome() == nome_jogo && this._jogosComprados[i].getNomeUsuario() == nome_usuario){
+        this._jogosComprados.splice(i,1)
+      }
+    }
+  }
 }

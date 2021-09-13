@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PerfilService } from 'src/app/services/perfil.service';
 
 const routes: Routes = [
   {

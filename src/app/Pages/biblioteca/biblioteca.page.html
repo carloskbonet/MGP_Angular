@@ -10,7 +10,11 @@
 <ion-content class="background_container">
   <ion-list>
     <ion-item-group *ngFor = "let jogos of lista_jogos">
-      <ion-item lines="inset">{{jogos.getNome()}}</ion-item>
+      <ion-item lines="inset">{{jogos.getNome()}}
+        <ion-button slot="end" color="dark" (click)="delete_game(jogos)">
+          <ion-icon name="close-circle"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-item-group>
   </ion-list>
 </ion-content>
