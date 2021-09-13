@@ -1,0 +1,47 @@
+ion-title{
+    font-size: 26px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1{
+    font-size: 23px;
+    text-align: justify;
+}
+
+ion-item{
+    font-size: 23px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-shadow: 1px 8px 8px 0px rgba(0,0,0,0.7);
+    padding: 14px 8px;
+    ion-input{
+        font-size: 20px;
+        --padding-top: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+
+ion-content{
+    margin-top: 15%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+ion-button{
+    margin-top: 35px;
+    font-size: 22px;
+    text-transform: initial;
+    box-shadow: 1px 8px 8px 0px rgba(0,0,0,0.7);
+    background-color: royalblue;
+}
+
+span{
+    color: red;
+}
+
+.background_container ion-button{
+    height: 50%;
+    position: relative;
+    align-items: flex-end;
+    top: -16px;
+}

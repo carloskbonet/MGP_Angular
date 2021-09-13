@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PerfilService } from 'src/app/services/perfil.service';
 
 const routes: Routes = [
   {
@@ -30,7 +31,12 @@ const routes: Routes = [
   {
     path: 'Jogo-Selecionado',
     loadChildren: () => import('./Pages/jogo-selecionado/jogo-selecionado.module').then( m => m.JogoSelecionadoPageModule)
+  },
+  {
+    path: 'Pages/Sobre',
+    loadChildren: () => import('./Pages/sobre/sobre.module').then( m => m.SobrePageModule)
   }
+
 ];
 
 @NgModule({
