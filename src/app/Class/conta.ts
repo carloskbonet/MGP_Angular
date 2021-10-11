@@ -1,14 +1,19 @@
 export class conta{
+    private _id:any
     private _nome:string
     private _apelido:string
     private _idade:number
     private _biografia:string
     
-    constructor(nome:string , apelido:string , idade:number , biografia:string){
+    constructor(id:any, nome:string , apelido:string , idade:number , biografia:string){
         this._nome = nome
         this._apelido = apelido
         this._idade = idade
         this._biografia = biografia
+    }
+
+    public setID(id:any){
+        this._id = id
     }
 
     public getNome():string{

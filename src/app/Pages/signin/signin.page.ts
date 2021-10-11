@@ -31,7 +31,7 @@ export class SigninPage implements OnInit {
   submitForm(){
     this.isSubmitted = true;
     if(!this._formLogar.valid){
-      this.presentAlert("agenda", "SignIn", "Todos os campos são obrigatórios")
+      this.presentAlert("MGP", "SignIn", "Todos os campos são obrigatórios")
       return false;
     }else{
       this._signIn();
@@ -44,11 +44,11 @@ export class SigninPage implements OnInit {
       this._formLogar.value['senha']
     )
     .then((res) => {
-      this.presentAlert("Agenda","SignIn","Seja bem vindo!!")
+      this.presentAlert("MGP","SignIn","Seja bem vindo!!")
       this.router.navigate(["/Pages/Biblioteca"])
     })
     .catch((error) => {
-      this.presentAlert("Agenda","Erro ao Logar","Tente Novamente")
+      this.presentAlert("MGP","Erro ao Logar","Tente Novamente")
       console.log(error.message)
     })
   }

@@ -45,11 +45,57 @@
           A  confirmação de senha necessita no mínimo 6 caracteres
         </span>
 
-        <span *ngIf="_isSubmitted && this._formCadastrar.value['senha'] != this._formCadastrar.value['confSenha']">
+        <span *ngIf="_isSubmitted && errorControl.senha.errors?.confirmedValidator">
           Senhas não coincidem
         </span>
       </ion-item>
 
+      <ion-item>
+        <ion-label position="floating"> Nome </ion-label>
+        <ion-input type ="text" formControlName = "nome" ></ion-input>
+
+        <span *ngIf="_isSubmitted && errorControl.nome.errors?.required">
+          Nome Obrigatório
+        </span>
+
+        <span *ngIf="_isSubmitted && errorControl.nome.errors?.minLength">
+          O nome deve ter no mínimo 3 caracteres
+        </span>
+
+        <span *ngIf="_isSubmitted && errorControl.nome.errors?.maxlength">
+          O nome pode conter até 16 caracteres
+        </span>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Apelido </ion-label>
+        <ion-input type ="text" formControlName = "apelido" ></ion-input>
+
+        <span *ngIf="_isSubmitted && errorControl.apelido.errors?.required">
+          Apelido Obrigatório
+        </span>
+
+        <span *ngIf="_isSubmitted && errorControl.apelido.errors?.minLength">
+          O apelido deve ter no mínimo 3 caracteres
+        </span>
+
+        <span *ngIf="_isSubmitted && errorControl.apelido.errors?.maxlength">
+          O apelido pode conter até 16 caracteres
+        </span>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating"> Idade </ion-label>
+        <ion-input type ="number" formControlName = "idade" ></ion-input>
+
+        <span *ngIf="_isSubmitted && errorControl.idade.errors?.required">
+          Idade Obrigatória
+        </span>
+
+        <span *ngIf="_isSubmitted && errorControl.idade.errors?.maxlength">
+          A idade deve conter até 3 dígitos
+        </span>
+      </ion-item>
 
       <ion-button expand="full"  color = "success" type = "submit"> Cadastrar
         <ion-icon name="create"></ion-icon></ion-button>
