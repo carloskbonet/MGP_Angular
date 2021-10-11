@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Signin</ion-title>
+    <ion-title>Iniciar Sessão</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,6 +20,7 @@
         Formato de email inválido
       </span>
 
+      <ion-item>
         <ion-label position="floating"> Senha </ion-label>
         <ion-input type ="password" formControlName = "senha" ></ion-input>
         <span *ngIf="_isSubmitted && errorControl.senha.errors?.required">
@@ -28,7 +29,7 @@
         <span *ngIf="_isSubmitted && errorControl.senha.errors?.minlength">
         Necessário no mínimo 6 caracteres
         </span>
-
+      </ion-item>
         <ion-button expand="full"  color = "success" type = "submit"> Entrar
          <ion-icon name="log-in"></ion-icon></ion-button>
         <ion-button expand="full"  color = "danger" (click)= "_signInGoogle()">
@@ -36,6 +37,7 @@
          <ion-icon slot = "end" name="logo-google"></ion-icon>
          </ion-button>
       </form>
-      <a (click)="_irParaSignUp()">Não tem Cadastro? Clique aqui</a>
+
+      <a (click)="_irParaSignUp()" class="cadastro">Não tem Cadastro? Clique aqui</a>
     </ion-list>
 </ion-content>

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>signup</ion-title>
+    <ion-title>Cadastrar-se</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -20,31 +20,35 @@
         Formato de email inválido
       </span>
 
-      <ion-label position="floating"> Senha </ion-label>
-      <ion-input type ="password" formControlName = "senha" ></ion-input>
+      <ion-item>
+        <ion-label position="floating"> Senha </ion-label>
+        <ion-input type ="password" formControlName = "senha" ></ion-input>
 
-      <span *ngIf="_isSubmitted && errorControl.senha.errors?.required">
-        Senha é Obrigatória
-      </span>
+        <span *ngIf="_isSubmitted && errorControl.senha.errors?.required">
+          Senha é Obrigatória
+        </span>
 
-      <span *ngIf="_isSubmitted && errorControl.senha.errors?.minlength">
-      Necessário no mínimo 6 caracteres
-      </span>
+        <span *ngIf="_isSubmitted && errorControl.senha.errors?.minlength">
+          Necessário no mínimo 6 caracteres
+        </span>
+      </ion-item>
 
-      <ion-label position="floating"> Confirmar Senha </ion-label>
-      <ion-input type ="password" formControlName = "confSenha" ></ion-input>
+      <ion-item>
+        <ion-label position="floating"> Confirmar Senha </ion-label>
+        <ion-input type ="password" formControlName = "confSenha" ></ion-input>
 
-      <span *ngIf="_isSubmitted && errorControl.senha.errors?.required">
+        <span *ngIf="_isSubmitted && errorControl.senha.errors?.required">
           prencher a confirmação de senha
-      </span>
+        </span>
 
-      <span *ngIf="_isSubmitted && errorControl.senha.errors?.minlength">
+        <span *ngIf="_isSubmitted && errorControl.senha.errors?.minlength">
           A  confirmação de senha necessita no mínimo 6 caracteres
-      </span>
+        </span>
 
-      <span *ngIf="_isSubmitted && this._formCadastrar.value['senha'] != this._formCadastrar.value['confSenha']">
+        <span *ngIf="_isSubmitted && this._formCadastrar.value['senha'] != this._formCadastrar.value['confSenha']">
           Senhas não coincidem
-      </span>
+        </span>
+      </ion-item>
 
 
       <ion-button expand="full"  color = "success" type = "submit"> Cadastrar
