@@ -5,7 +5,7 @@ import { PerfilService } from 'src/app/services/perfil.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'Cadastro',
+    redirectTo: 'signin',
     pathMatch: 'full'
   },
   {
@@ -35,7 +35,21 @@ const routes: Routes = [
   {
     path: 'Pages/Sobre',
     loadChildren: () => import('./Pages/sobre/sobre.module').then( m => m.SobrePageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./Pages/signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./Pages/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
   }
+
+
 
 ];
 
