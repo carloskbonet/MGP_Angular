@@ -66,11 +66,6 @@ export class AuthServiceService {
       return userRef.set(userDataConst , {merge:true})
     }
 
-    public estaLogado() : boolean {
-      const user = JSON.parse(localStorage.getItem('user'))
-      return (user != null) ? true : false;
-    }
-
     public getUserLogado() : User {
       const user = JSON.parse(localStorage.getItem('user'))
       return (user != null) ? user : false;
@@ -90,7 +85,7 @@ export class AuthServiceService {
       return this.ngFireAuth.signOut()
       .then(() => {
         localStorage.removeItem('user')
-        this.router.navigate(['signIn'])
+        this.router.navigate(['signin'])
       })
     }
 }

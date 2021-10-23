@@ -9,17 +9,25 @@ import { JogoService } from 'src/app/services/jogo.service';
   styleUrls: ['./loja.page.scss'],
 })
 export class LojaPage implements OnInit {
-  private lista_jogos:jogo[] = []
+  private lista_jogos: jogo[] = []
+  private data: any
 
-  constructor(private router:Router , _jogoService:JogoService) {
-    this.lista_jogos = _jogoService.getJogos()
+  constructor(private router: Router, private _jogoService: JogoService) {
+    this.data = this._jogoService.getJogos()
+    this.data.forEach(data => {
+      const lista = data as Array<any>
+      lista.forEach(c => {
+        let _jogo = new jogo(c.data._nome, c.data._descricao, c.data._preco)
+        this.lista_jogos.push(_jogo)
+      })
+    });
   }
 
   ngOnInit() {
   }
 
-  private expandir(jogos:jogo):void{
-    this.router.navigateByUrl("/Jogo-Selecionado",{state: {objeto : jogos}})
+  private expandir(jogos: jogo): void {
+    this.router.navigateByUrl("/Jogo-Selecionado", { state: { objeto: jogos } })
   }
 
 }

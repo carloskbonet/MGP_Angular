@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import * as firebase from 'firebase';
+import { conta } from 'src/app/Class/conta';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
+import { ContaCRUDService } from 'src/app/services/conta-crud.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,11 +14,14 @@ import { AuthServiceService } from 'src/app/services/auth-service.service';
 })
 export class SigninPage implements OnInit {
   private _formLogar : FormGroup
+  private data: any
+
   isSubmitted = false;
   constructor(public alertController : AlertController,
     public router: Router,
     public FormBuilder : FormBuilder,
-    public authService : AuthServiceService) { }
+    public authService : AuthServiceService,
+    private _contaCRUDService : ContaCRUDService) { }
 
   ngOnInit() {
     this._formLogar = this.FormBuilder.group({
@@ -55,6 +61,31 @@ export class SigninPage implements OnInit {
  
   private _signInGoogle() : void{
     this.authService.signinWithGoogle()
+    
+    //Cria a conta para usuário da google
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.data = this._contaCRUDService.getContas()
+        this.data.forEach(data => {
+          const lista = data as Array<any>
+          let verify = false as boolean
+          lista.forEach(c => {
+            if(user.email == c.data._id){
+              verify = true
+            }
+          })
+          if(!verify){
+            let __conta = new conta(user.email,"","",0,"")
+            this._contaCRUDService.createConta(__conta)
+          }
+        });
+
+      } else {
+        // User not logged in or has just logged out.
+        console.log("Not in a session")
+      }
+    })
+    
   }
 
   private _irParaSignUp (): void{

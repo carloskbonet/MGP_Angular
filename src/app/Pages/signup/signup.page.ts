@@ -56,21 +56,13 @@ export class SignupPage implements OnInit {
       this._formCadastrar.value['senha']
     )
     .then((res) => {
-      let __conta = new conta(0,
+      let __conta = new conta(
+        this._formCadastrar.value['email'],
         this._formCadastrar.value['nome'],
         this._formCadastrar.value['apelido'],
         this._formCadastrar.value['idade'],
         "")
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          // User logged in already or has just logged in.
-          __conta.setID(user.uid)
-          console.log("It just works");
-        } else {
-          // User not logged in or has just logged out.
-          console.log("Not in a session")
-        }
-      })
+        
       this._crudService.createConta(__conta)
       .then(() =>{
         this.presentAlert("MGP","SignUp","Cadastro Efetuado com Sucesso!!")
